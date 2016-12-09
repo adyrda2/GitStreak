@@ -59,10 +59,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Confirmation View Controller-->
         <scene sceneID="pLA-Zw-96R">
             <objects>
-                <viewController id="hGu-D4-jn9" sceneMemberID="viewController">
+                <viewController id="hGu-D4-jn9" customClass="ConfirmationViewController" customModule="GitStreak" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Jd-vc-9SU"/>
                         <viewControllerLayoutGuide type="bottom" id="1Tv-CR-bGd"/>
