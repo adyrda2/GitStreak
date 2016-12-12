@@ -2,6 +2,15 @@ import Foundation
 import UIKit
 
 class ConfirmationViewController: UIViewController {
+
+  @IBOutlet var streakCount: UILabel!
+
+  var countValue: Int = 0 {
+    didSet {
+      streakCount?.text = "\(countValue)"
+    }
+  }
+
   let emitterLayer = CAEmitterLayer()
 
   override func viewDidLoad() {
