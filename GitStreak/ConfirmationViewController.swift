@@ -3,13 +3,13 @@ import UIKit
 
 class ConfirmationViewController: UIViewController {
 
-  @IBOutlet var streakCount: UILabel!
-
-  var countValue: Int = 0 {
+  @IBOutlet var streakCount: UILabel! {
     didSet {
-      streakCount?.text = "\(countValue)"
+      streakCount.text = "\(countValue)"
     }
   }
+
+  var countValue: Int = 0
 
   let emitterLayer = CAEmitterLayer()
 
