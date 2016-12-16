@@ -23,7 +23,7 @@ class ViewController: UIViewController {
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     if segue.identifier == "ConfirmationSegue" {
       let confirmationViewController = segue.destination as! ConfirmationViewController
-      confirmationViewController.countValue += 1
+      confirmationViewController.saveIncrement()
     }
   }
 

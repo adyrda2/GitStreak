@@ -11,7 +11,7 @@ class ConfirmationViewController: UIViewController {
 
   @IBAction func donePressed(_ sender: UIButton) {}
 
-  var countValue: Int = 0
+  var countValue = UserDefaults.standard.integer(forKey: "count")
 
   let emitterLayer = CAEmitterLayer()
 
@@ -41,5 +41,10 @@ class ConfirmationViewController: UIViewController {
   func greenColor() -> CGColor {
     let color = UIColor(colorLiteralRed: 106.0/255.0, green: 255.0/255.0, blue: 17.0/255.0, alpha: 1).cgColor
     return color
+  }
+
+  func saveIncrement() {
+    countValue += 1
+    UserDefaults.standard.set(countValue, forKey: "count")
   }
 }
