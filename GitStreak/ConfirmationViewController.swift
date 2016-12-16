@@ -9,6 +9,8 @@ class ConfirmationViewController: UIViewController {
     }
   }
 
+  @IBAction func donePressed(_ sender: UIButton) {}
+
   var countValue: Int = 0
 
   let emitterLayer = CAEmitterLayer()

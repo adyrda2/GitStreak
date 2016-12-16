@@ -88,10 +88,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PXu-jQ-bJo">
+                                <rect key="frame" x="322" y="28" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="hGu-D4-jn9" eventType="touchUpInside" id="Nkc-8h-Vi5"/>
+                                    <segue destination="5fq-Hh-KGU" kind="unwind" unwindAction="unwindFromConfirmationView:" id="54u-iS-N6S"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Dml-Cd-fAI" firstAttribute="top" secondItem="sVd-l6-0NM" secondAttribute="bottom" constant="52" id="EP0-MS-b1h"/>
+                            <constraint firstItem="PXu-jQ-bJo" firstAttribute="top" secondItem="1Jd-vc-9SU" secondAttribute="bottom" constant="8" id="Mom-iG-h50"/>
+                            <constraint firstItem="PXu-jQ-bJo" firstAttribute="trailing" secondItem="NuT-Og-sr0" secondAttribute="trailingMargin" id="WWL-7T-T7p"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Dml-Cd-fAI" secondAttribute="trailing" constant="85" id="awx-to-d2s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="sVd-l6-0NM" secondAttribute="trailing" constant="152" id="csj-m7-UgB"/>
                             <constraint firstItem="sVd-l6-0NM" firstAttribute="top" secondItem="1Jd-vc-9SU" secondAttribute="bottom" constant="112" id="hnI-WC-LQz"/>
@@ -104,6 +114,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vVG-5Z-OmF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5fq-Hh-KGU" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="861.60000000000002" y="-558.17091454272872"/>
         </scene>

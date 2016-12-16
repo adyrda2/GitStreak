@@ -26,4 +26,8 @@ class ViewController: UIViewController {
       confirmationViewController.countValue += 1
     }
   }
+
+  @IBAction func unwindFromConfirmationView(_ segue: UIStoryboardSegue) {
+    dismiss(animated: true, completion: nil)
+  }
 }
