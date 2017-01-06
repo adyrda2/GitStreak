@@ -1,33 +1,34 @@
-//
-//  ViewController.swift
-//  GitStreak
-//
-//  Created by Angela Dyrda on 12/9/16.
-//  Copyright © 2016 AngelaDyrda. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-  }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  var committed: Bool = false
+  var dateToday: Date = Date()
+  var lastCommitDate: Date = Date()
+  
+  @IBAction func yesButtonPressed(_ sender: UIButton) {
+    lastCommitDate = dateToday
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "ConfirmationSegue" {
-      let confirmationViewController = segue.destination as! ConfirmationViewController
-      confirmationViewController.saveIncrement()
-    }
+      guard !didCommitToday() else { return }
+        let confirmationViewController = segue.destination as! ConfirmationViewController
+        confirmationViewController.saveIncrement()
   }
 
   @IBAction func unwindFromConfirmationView(_ segue: UIStoryboardSegue) {
     dismiss(animated: true, completion: nil)
+  }
+
+  func nextDay() -> Date {
+    let calendar = NSCalendar.current
+    let dateComponents = NSDateComponents()
+    dateComponents.day = 1
+    let today:Date = dateToday
+    guard let nextDay = calendar.date(byAdding: dateComponents as DateComponents, to: today as Date) else { return Date() }
+    return nextDay
+  }
+
+  func didCommitToday() -> Bool {
+    return lastCommitDate == dateToday ? true : false
   }
 }
