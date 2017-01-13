@@ -4,15 +4,18 @@ class ViewController: UIViewController {
   var committed: Bool = false
   var dateToday: Date = Date()
   var lastCommitDate: Date = Date()
-  
+
   @IBAction func yesButtonPressed(_ sender: UIButton) {
-    lastCommitDate = dateToday
+    let lastCommit = lastCommitDate.timeIntervalSinceNow * -1.0
+    guard lastCommit > 86400 else { return }
+    UserDefaults.standard.set(lastCommitDate, forKey: "lastCommitDate")
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-      guard !didCommitToday() else { return }
+    if segue.identifier == "ConfirmationSegue" && !didCommitToday() {
         let confirmationViewController = segue.destination as! ConfirmationViewController
         confirmationViewController.saveIncrement()
+    }
   }
 
   @IBAction func unwindFromConfirmationView(_ segue: UIStoryboardSegue) {
