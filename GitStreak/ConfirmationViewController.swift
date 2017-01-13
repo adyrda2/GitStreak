@@ -6,6 +6,7 @@ class ConfirmationViewController: UIViewController {
   @IBOutlet var streakCount: UILabel! {
     didSet {
       streakCount.text = "\(countValue)"
+      streakCount.adjustsFontSizeToFitWidth = true
     }
   }
 
