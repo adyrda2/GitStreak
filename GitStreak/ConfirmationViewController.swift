@@ -48,4 +48,8 @@ class ConfirmationViewController: UIViewController {
     countValue += 1
     UserDefaults.standard.set(countValue, forKey: "count")
   }
+
+  func resetCounter() {
+    countValue = 1
+  }
 }

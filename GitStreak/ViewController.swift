@@ -7,14 +7,19 @@ class ViewController: UIViewController {
 
   @IBAction func yesButtonPressed(_ sender: UIButton) {
     let lastCommit = lastCommitDate.timeIntervalSinceNow * -1.0
+
     guard lastCommit > 86400 else { return }
     UserDefaults.standard.set(lastCommitDate, forKey: "lastCommitDate")
   }
 
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    if segue.identifier == "ConfirmationSegue" && !didCommitToday() {
-        let confirmationViewController = segue.destination as! ConfirmationViewController
-        confirmationViewController.saveIncrement()
+    let confirmationViewController = segue.destination as! ConfirmationViewController
+
+    if !didCommitYesterday() {
+      confirmationViewController.resetCounter()
+    }
+    else if !didCommitToday() {
+      confirmationViewController.saveIncrement()
     }
   }
 
@@ -22,16 +27,20 @@ class ViewController: UIViewController {
     dismiss(animated: true, completion: nil)
   }
 
-  func nextDay() -> Date {
+  func dateYesterday() -> Date {
     let calendar = NSCalendar.current
     let dateComponents = NSDateComponents()
-    dateComponents.day = 1
+    dateComponents.day = -1
     let today:Date = dateToday
-    guard let nextDay = calendar.date(byAdding: dateComponents as DateComponents, to: today as Date) else { return Date() }
-    return nextDay
+    guard let yesterday = calendar.date(byAdding: dateComponents as DateComponents, to: today as Date) else { return Date() }
+    return yesterday
   }
 
   func didCommitToday() -> Bool {
     return lastCommitDate == dateToday ? true : false
+  }
+
+  func didCommitYesterday() -> Bool {
+    return lastCommitDate == dateYesterday() ? true : false
   }
 }
