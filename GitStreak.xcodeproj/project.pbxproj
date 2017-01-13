@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A2B45921E298211005BFD13 /* StreakManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2B45911E298211005BFD13 /* StreakManager.swift */; };
 		7A85DA431DFB3F6D0014B22E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85DA421DFB3F6D0014B22E /* AppDelegate.swift */; };
 		7A85DA451DFB3F6D0014B22E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A85DA441DFB3F6D0014B22E /* ViewController.swift */; };
 		7A85DA481DFB3F6D0014B22E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A85DA461DFB3F6D0014B22E /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A2B45911E298211005BFD13 /* StreakManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreakManager.swift; sourceTree = "<group>"; };
 		7A85DA3F1DFB3F6D0014B22E /* GitStreak.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitStreak.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A85DA421DFB3F6D0014B22E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A85DA441DFB3F6D0014B22E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 		7A85DA361DFB3F6D0014B22E = {
 			isa = PBXGroup;
 			children = (
+				7A2B45911E298211005BFD13 /* StreakManager.swift */,
 				7A85DA411DFB3F6D0014B22E /* GitStreak */,
 				7A85DA561DFB3F6D0014B22E /* GitStreakTests */,
 				7A85DA611DFB3F6D0014B22E /* GitStreakUITests */,
@@ -265,6 +268,7 @@
 				7A85DA451DFB3F6D0014B22E /* ViewController.swift in Sources */,
 				7A85DA731DFB444F0014B22E /* ConfirmationViewController.swift in Sources */,
 				7A85DA431DFB3F6D0014B22E /* AppDelegate.swift in Sources */,
+				7A2B45921E298211005BFD13 /* StreakManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
