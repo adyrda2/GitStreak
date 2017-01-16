@@ -32,6 +32,7 @@
                                 <rect key="frame" x="172" y="117" width="30" height="30"/>
                                 <state key="normal" title="Yup"/>
                                 <connections>
+                                    <action selector="yesButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="X4m-Ia-Pzt"/>
                                     <segue destination="hGu-D4-jn9" kind="presentation" identifier="ConfirmationSegue" id="IHD-4b-4I6"/>
                                 </connections>
                             </button>
